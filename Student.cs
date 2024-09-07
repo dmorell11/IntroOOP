@@ -9,9 +9,9 @@
             this.id = id;
         }
 
-        public override void IncreaseAge()
+        public override void Greetings()
         {
-            age += 2;
+            Console.WriteLine("Hello, I am a student");
         }
 
         public int GetId() { return id; }

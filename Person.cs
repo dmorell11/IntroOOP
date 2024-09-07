@@ -1,9 +1,10 @@
 ﻿namespace IntroOOP
 {
-    internal class Person
+    //TODO Add enum for hair
+    internal abstract class Person
     {
         private string name;
-        public int age;
+        private int age;
 
         public Person(string name)
         {
@@ -15,18 +16,7 @@
             this.age = age;
             this.name = name;
         }
-
-        public virtual void IncreaseAge()
-        {
-            age++;
-            Console.WriteLine(age);
-        }
-
-        public void ChangeNumber(ref int number)
-        {
-            number++;
-            Console.WriteLine(number);
-        }
+        public abstract void Greetings();
 
         public string GetName()
         {
