@@ -1,7 +1,7 @@
 ﻿namespace IntroOOP
 {
     public enum HairType { None, Short, Long}
-    internal class Person
+    internal class Person : IGreeter
     {
         private string name;
         private int age;
