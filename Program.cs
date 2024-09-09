@@ -4,33 +4,34 @@
     {
         static void Main(string[] args) 
         {
-            Person ana = new Student("Ana", 27, 32);
-            Person luis = new Student("Luis", 19, 96);
-            Person maria = new Student("Maria", 18, 190);
+            Person ana = new Person("Ana", 27, HairType.Long);
+            Person juan = new Person("Juan");
 
-            Student lucia = new Student("Lucia", 17, 199);
-            Student pedro = new Student("Pedro", 32, 78);
+            Person luis = new Student("Luis", 19, HairType.Short, 96);
+            Person maria = new Student("Maria", 18, HairType.Long, 190);
 
-            //TODO Add class Teacher
+            Student lucia = new Student("Lucia", 17, HairType.Long, 199);
+            Student pedro = new Student("Pedro", 32, HairType.Short, 78);
+            
+            Teacher daniel = new Teacher("Daniel", 78000.5);
 
-            //TODO: Explain why both can call Greetings
-            maria.Greetings();
-            pedro.Greetings();
+            
+
+            Console.WriteLine(ana.Name);
+            lucia.Age = 20;
+            Console.WriteLine(lucia.Age);
+            Console.WriteLine(lucia.Id);
+            Console.WriteLine(pedro.Greetings());
+            Console.WriteLine(daniel.Greetings());
 
             //TODO: Correct casting
             //(Student)maria.GetId();
 
-            for (int i = 0; i < 10; i++)
-            {
-                if (i == 0)
-                {
-                    Console.WriteLine("It is 0");
-                }
 
-                //TODO: Explain else if, else and switch with enum
-            }
+            Testing.TryFoorLoop();
+            Testing.TryDoWhileLoop();
+            
 
-            //TODO: Explain while, do while
         }
     }
 

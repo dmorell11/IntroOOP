@@ -2,18 +2,16 @@
 {
     internal class Student : Person
     {
-        int id;
+        public int Id { get; private set; }
 
-        public Student (string name, int age, int id) : base (name, age)
+        public Student (string name, int age, HairType hair, int id) : base (name, age, hair)
         {
-            this.id = id;
+            Id = id;
         }
 
-        public override void Greetings()
+        public override string Greetings()
         {
-            Console.WriteLine("Hello, I am a student");
+            return "Hello, I am a student";
         }
-
-        public int GetId() { return id; }
     }
 }

@@ -1,39 +1,42 @@
 ﻿namespace IntroOOP
 {
-    //TODO Add enum for hair
-    internal abstract class Person
+    public enum HairType { None, Short, Long}
+    internal class Person
     {
         private string name;
         private int age;
+        private HairType hair = HairType.None;
+        
+        public string Name => name;
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                if (age > 18)
+                {
+                    age = value;
+                }
+            }
+        }
 
         public Person(string name)
         {
             this.name = name;
         }
 
-        public Person(string name, int age)
+        public Person(string name, int age, HairType hair)
         {
             this.age = age;
             this.name = name;
+            this.hair = hair;
         }
-        public abstract void Greetings();
-
-        public string GetName()
+        public virtual string Greetings()
         {
-            return name;
-        }
-
-        public int GetAge()
-        {
-            return age;
-        }
-
-        public void SetAge(int newAge)
-        {
-            if (age > 18)
-            {
-                age = newAge;
-            }
+            return "Hello, I am person";
         }
     }
 }
