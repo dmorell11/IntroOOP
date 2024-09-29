@@ -10,6 +10,11 @@ namespace IntroOOP
     {
         public string Name { get; protected set; }
 
+        public Animal(string name)
+        {
+            Name = name;
+        }
+
         public abstract string Greetings();
     }
 }

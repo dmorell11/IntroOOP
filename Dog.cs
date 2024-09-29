@@ -12,9 +12,8 @@ namespace IntroOOP
             get; 
             private set; 
         }
-        public Dog (string name, string breed)
+        public Dog (string name, string breed) : base (name)
         {
-            Name = name;
             Breed = breed;
         }
 

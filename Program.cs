@@ -2,6 +2,68 @@
 {
     class Program
     {
+        public static void Main(string[] args)
+        {
+            // Create the university mascot
+            Dog universityMascot = new Dog("Penn", "Beagle");
+
+            // Define the classroom names and capacities
+            var classroomDetails = new List<(string name, int capacity)>
+            {
+                ("Math 101", 30),
+                ("Science 201", 25),
+                ("History 301", 20)
+            };
+
+            // Create the university with 3 classrooms (with capacities of 30, 25, and 20 students respectively)
+            University upenn = new University(universityMascot, classroomDetails);
+
+            // Create students
+            Student alice = new Student("Alice", 20, HairType.Long);
+            Student bob = new Student("Bob", 19, HairType.Short);
+
+            // Create an underage student 
+            Student kevin = new Student("Kevin", 15, HairType.Short);
+
+            // Create an unregistered student
+            Student charlie = new Student("Charlie", 21, HairType.Short);
+
+            // Create a teacher
+            Teacher drSmith = new Teacher("Dr. Smith", 50000);
+            
+
+            // Add students and teachers to the university
+            upenn.AddNewStudent(alice);
+            upenn.AddNewStudent(bob);
+            upenn.AddNewTeacher(drSmith);
+
+            // Attempt to add an underage student
+            upenn.AddNewStudent(kevin); // This will show an error
+
+            // Assign teacher and students to a classroom
+            Classroom mathClassroom = upenn.Classrooms[0]; // Select the first classroom
+            Classroom scienceClassroom = upenn.Classrooms[1]; // Select the first classroom
+
+            upenn.AssignTeacherToClassroom(drSmith, mathClassroom);
+            upenn.AssignStudentToClassroom(alice, mathClassroom);
+            upenn.AssignStudentToClassroom(bob, mathClassroom);
+
+            // Attempt to assign an unregistered student
+            upenn.AssignStudentToClassroom(charlie, mathClassroom); // This will show an error
+
+            // Attempt to assign a student to a classroom without teacher
+            upenn.AssignStudentToClassroom(alice, scienceClassroom); // This will show an error
+
+            // List the members of the classroom
+            Console.WriteLine(mathClassroom.ListClassroomMembers());
+
+            // Greeting from the mascot
+            Console.WriteLine(universityMascot.Greetings());
+        }
+
+
+        // Main first classes
+        /*
         static void Main(string[] args) 
         {
             var ana = new Person("Ana", 27, HairType.Long);
@@ -69,7 +131,8 @@
                 Console.WriteLine(greeter.Greetings());
             }
         }
+        */
     }
 
-    
+
 }
