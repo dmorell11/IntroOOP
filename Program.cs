@@ -4,6 +4,8 @@
     {
         public static void Main(string[] args)
         {
+            GenericClass<Student, int> genericClass = new GenericClass<Student, int>();
+
             // Create the university mascot
             Dog universityMascot = new Dog("Penn", "Beagle");
 
